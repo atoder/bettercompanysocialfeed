@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{title}}</title>
+		<link rel="stylesheet" href="/css/bootstrap.css">
+		<link rel="stylesheet" href="/css/style.css">
+	</head>
+	<body>
+		<div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-12 col-lg-12">
+                    <div class="msg-alert text-center">{{{messages}}}</div>
+                    {{#if errors}}
+                        {{#each errors}}
+                            <div class="alert alert-danger text-center">{{msg}}</div>
+                        {{/each}}
+                    {{/if}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    {{{body}}}
+                </div>
+            </div>
+		</div>
+	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="/javascripts/bootstrap.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="/javascripts/fileupload.js"></script>
+	</body>
+</html>

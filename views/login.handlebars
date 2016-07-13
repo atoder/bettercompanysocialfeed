@@ -1,0 +1,12 @@
+<form class="form-signin" method="post" action="/login">
+    <h2 class="form-signin-heading">{{title}}</h2>
+    <h5 class="form-signin-sub-heading">{{subtitle}}</h5>
+    <label class="sr-only">Email</label>
+    <input type="email" class="form-control" name="email" placeholder="Email" required autofocus>
+    <label class="sr-only">Password</label>
+    <input type="password" name="password" class="form-control" placeholder="Password" required>
+    <button class="btn btn-lg btn-primary btn-block btn-sign-in" type="submit">SIGN IN</button>
+</form>
+<div class="login-create-account text-center">
+    <a href="/register"><button class="btn btn-lg btn-primary btn-block btn-sign-in">NEW ACCOUNT</button></a>
+</div>

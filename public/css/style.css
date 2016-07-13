@@ -1,0 +1,176 @@
+body {
+  padding-top: 100px;
+  background-image: url('../images/img_background@2x.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center bottom;
+  -webkit-background-size: auto 100%;
+  -moz-background-size: auto 100%;
+  -ms-background-size: auto 100%;
+  -o-background-size: auto 100%;
+  background-size: auto 100%;
+  font-family: QuickSand;
+}
+
+@font-face {
+  font-family: QuickSand;
+  src: url('../fonts/quicksand/Quicksand-Regular.otf');
+}
+
+.form-signin {
+  max-width: 330px;
+  margin: 0 auto;
+  margin-top: 60px;
+}
+
+.form-signin h2, h5 {
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 18px;
+  width: 98%;
+  margin: 0 auto;
+}
+
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-top: 22px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+/* For password box on register page */
+input[type="password"].password-register {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* For confirm password box on register page */
+input[type="password"].confirm-password {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+input[type=text].short-description {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.login-create-account {
+  display: block;
+  max-width: 330px;
+  margin: 0 auto;
+  margin-top: -8px;
+}
+
+.login-create-account a {
+  color: #FFFFFF;
+}
+
+.btn-sign-in, .btn-sign-in:hover, .btn-sign-in:focus, .btn-sign-in:active, .btn-sign-in:visited, .btn-sign-in:active:focus {
+  position: relative;
+  margin-top: 10px;
+  background:url('../images/btn_signin@2x.png') no-repeat;
+  background-size: 100% 100%;
+  border: none;
+  border-color: #a18dff;
+  margin-bottom: 6px;
+  outline: 0;
+  font-size: 12px;
+  padding: 22px;
+}
+
+/* Warning messages related to login page */
+.msg-alert {
+  margin-top: -78px;
+}
+
+.msg-alert ul {
+  max-width: 330px;
+  display: block;
+  margin: 0 auto;
+  list-style-type: none;
+  color: #FFFFFF;
+  background-color: #E57873;
+  border-color: #ebccd1;
+  padding: 15px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+/* Profile picture upload css */
+
+#file-upload-group {
+	margin-top: 4px;
+}
+
+#browse-btn {
+	width: 92%;
+	margin-left: 4px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+#file-description {
+	font-size: 0.9em;
+}
+
+#register-profile-image {
+  margin-bottom: -24px;
+  margin-top: -10px;
+}
+
+#register-profile-image img {
+	margin: 0 auto;
+  height: 88px;
+  width: 88px;
+  margin-bottom: -42px;
+  border-radius: 50%;
+}
+
+/* Below is support for IE8 and below for select file profile picture on register page */
+/* Source: http://stackoverflow.com/questions/11235206/twitter-bootstrap-form-file-element-upload-button */
+/* Source2: https://www.abeautifulsite.net/whipping-file-inputs-into-shape-with-bootstrap-3 */
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}

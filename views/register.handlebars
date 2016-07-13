@@ -1,0 +1,34 @@
+<div id="register-profile-image">
+	<img src="/images/default-profile.png" class="img-responsive" alt="profile image" id="default-profile">
+</div>
+
+<form class="form-signin" method="post" action="/register" enctype="multipart/form-data">
+    <h2 class="form-signin-heading">{{title}}</h2>
+    <h5 class="form-signin-sub-heading">{{subtitle}}</h5>
+
+    <label class="sr-only">Email</label>
+    <input type="email" class="form-control" name="email" placeholder="Email" required autofocus>
+
+    <label class="sr-only">Password</label>
+    <input type="password" name="password" class="form-control password-register" placeholder="Password" required>
+
+	<label class="sr-only">Confirm Password</label>
+	<input type="password" class="form-control confirm-password" placeholder="Confirm Password" name="password2" required>
+
+	<label class="sr-only">Short Description</label>
+	<input type="text" class="form-control short-description" placeholder="Short Description" name="description" required>
+
+	<div class="input-group" id="file-upload-group">
+		<label class="input-group-btn">
+			<span class="btn btn-primary btn-file" id="browse-btn">
+				Browse… <input type="file" style="display: none;" accept="image/*" name="profile-photo"> 
+			</span>
+		</label>
+		<input type="text" class="form-control" readonly="" placeholder="Select a profile picture" id="file-description">
+	</div>
+
+    <button class="btn btn-lg btn-primary btn-block btn-sign-in" type="submit">REGISTER</button>
+</form>
+<div class="login-create-account text-center">
+    <a href="/"> <button class="btn btn-lg btn-primary btn-block btn-sign-in">LOG IN</button></a>
+</div>

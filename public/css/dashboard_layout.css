@@ -1,0 +1,175 @@
+body {
+  background-image: url('../images/img_background@2x.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center bottom;
+  -webkit-background-size: auto 100%;
+  -moz-background-size: auto 100%;
+  -ms-background-size: auto 100%;
+  -o-background-size: auto 100%;
+  background-size: auto 100%;
+  font-family: QuickSand;
+  color: white;
+  margin: 0 auto;
+}
+
+.container {
+  text-align: center;
+}
+
+@font-face {
+  font-family: QuickSand;
+  src: url('../fonts/quicksand/Quicksand-Regular.otf');
+}
+.navbar-brand {
+	font-size: 1.2em;
+}
+
+/* Warning messages related to dashboard sign in*/
+.msg-alert ul {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  list-style-type: none;
+  color: #FFFFFF;
+  background-color: #E57873;
+  border-color: #ebccd1;
+  padding: 15px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+#fixed-wrapper {
+	width: 75%;
+	position: fixed;
+	/* Center the element using margin-left = 1/2 of width: 75%  = 75/2 = 37.5 */
+	margin-left: -37.5%;
+	bottom: 56px;
+}
+
+.img-responsive.img-compose {
+	display: block;
+	margin: 0 auto;
+	z-index: 2;
+	width: 60px;
+}
+
+.modal-header, .modal-custom-footer {
+  border-style: none;
+}
+
+.modal-dialog {
+  max-width: 260px;
+  margin: 0 auto;
+  margin-top: 300px;
+}
+
+.modal-content {
+  max-width: 400px;
+  margin: 0 auto;
+  height: 200px;
+  margin-bottom: 8px;
+}
+
+/* Custom created footer which wouldn't be defined in bootstrap */
+.modal-custom-footer {
+  margin-top: 12px;
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative; 
+}
+/* Using just background color instead of a custom button background */
+.post-button, .post-button:hover, .post-button:focus, .post-button:active, .post-button:visited, .post-button:active:focus {
+  width: 100%;
+  margin-top: 10px;
+  /* background: url('../images/btn_signin@2x.png') no-repeat; */
+  background-size: 100% 100%;
+  background-color: #a18dff;
+  border: none;
+  border-color: #a18dff;
+  margin-bottom: 6px;
+  outline: 0;
+  font-size: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin: 0 auto;
+  /* display: block; */
+  margin: 0 auto;
+}
+
+/* Removes all styling for text area */
+#message-text {
+  resize: none;
+  border: none;
+  overflow: auto;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  height: 140px
+}
+
+.user-msg {
+  background-color: #FFFFFF;
+  width: 50%;
+  max-width: 480px;
+  padding: 12px;
+  margin: 0 auto;
+  text-align: left;
+  margin-bottom: 8px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  overflow: overlay;
+}
+
+.header-msg {
+  color: #000000;
+}
+
+.body-msg {
+  padding-top: 32px;
+  color: #9D9D9D;
+}
+
+#profile {
+  margin: 0 auto;
+}
+
+/* Profile page avatar image */
+#profile img {
+  width: 88px;
+  height: 88px;
+  margin-top: 12px;
+  border-radius: 50%;
+}
+
+/* Dashboard chat page avatar image */
+.user-avatar img {
+  width: 66px;
+  height: 66px;
+  margin-top: 12px;
+  border-radius: 50%;
+  margin-left: 3px;
+}
+
+.user-email {
+  color: #000000;
+  margin-top: 22px;
+  text-align: center;
+  border-top-style: groove;
+  border-width: 1px;
+  padding-top: 12px;
+}
+
+.description-text {
+  font-size: 0.9em;
+}
+
+.glyphicon-arrow-left {
+  color: white;
+}

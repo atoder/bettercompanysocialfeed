@@ -85,7 +85,6 @@ body {
 .post-button, .post-button:hover, .post-button:focus, .post-button:active, .post-button:visited, .post-button:active:focus {
   width: 100%;
   margin-top: 10px;
-  /* background: url('../images/btn_signin@2x.png') no-repeat; */
   background-size: 100% 100%;
   background-color: #a18dff;
   border: none;
@@ -95,8 +94,6 @@ body {
   font-size: 12px;
   padding-top: 12px;
   padding-bottom: 12px;
-  margin: 0 auto;
-  /* display: block; */
   margin: 0 auto;
 }
 

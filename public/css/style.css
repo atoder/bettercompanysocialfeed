@@ -45,6 +45,7 @@ body {
 }
 
 .form-signin input[type="email"] {
+  width: 100%;
   margin-top: 22px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
@@ -53,6 +54,7 @@ body {
 }
 
 .form-signin input[type="password"] {
+  width: 100%;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   border-bottom-right-radius: 8px;
@@ -61,17 +63,20 @@ body {
 
 /* For password box on register page */
 input[type="password"].password-register {
+  width: 100%;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 
 /* For confirm password box on register page */
 input[type="password"].confirm-password {
+  width: 100%;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 
 input[type=text].short-description {
+  width: 100%;
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
@@ -88,16 +93,21 @@ input[type=text].short-description {
 }
 
 .btn-sign-in, .btn-sign-in:hover, .btn-sign-in:focus, .btn-sign-in:active, .btn-sign-in:visited, .btn-sign-in:active:focus {
-  position: relative;
+  width: 100%;
   margin-top: 10px;
-  background:url('../images/btn_signin@2x.png') no-repeat;
   background-size: 100% 100%;
   border: none;
   border-color: #a18dff;
-  margin-bottom: 6px;
+  background-color: #a18dff;
+  margin-bottom: 18px;
   outline: 0;
   font-size: 12px;
   padding: 22px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  -webkit-box-shadow: 0 2px 2px -2px #000000;
+  -moz-box-shadow: 0 2px 2px -2px #000000;
+  box-shadow: 0 2px 2px -2px #000000;
 }
 
 /* Warning messages related to login page */
@@ -128,7 +138,6 @@ input[type=text].short-description {
 
 #browse-btn {
 	width: 92%;
-	margin-left: 4px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
@@ -136,6 +145,7 @@ input[type=text].short-description {
 }
 
 #file-description {
+  width: 100%;
 	font-size: 0.9em;
 }
 
@@ -160,6 +170,7 @@ input[type=text].short-description {
     overflow: hidden;
 }
 .btn-file input[type=file] {
+    width: 100%;
     position: absolute;
     top: 0;
     right: 0;

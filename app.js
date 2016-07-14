@@ -5,6 +5,9 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+// For sanitizing user input
+var sanitizer = require('sanitizer');
+
 var expressValidator = require('express-validator');
 //flash message middleware for Connect.
 var flash = require('connect-flash');
@@ -153,6 +156,8 @@ app.io.sockets.on('connection', function(socket){
 
 	socket.on('send message', function(data){
     console.log('sending message');
+    // sanitize user data
+    data = sanitizer.sanitize(data);
 		var newMessage = new Chat({email: userEmail, avatar: userAvatar, msg: data});
 		newMessage.save(function(err) {
 			if (err) throw err;

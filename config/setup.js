@@ -28,7 +28,7 @@
 module.exports = {
   // mongodb url
   //'dbUrl': process.env.MONGODB_URI,
-  'dbUrl': 'mongodb://localhost/bettercompanysocialfeed',
+  'dbUrl': 'mongodb://localhost/socialfeed',
 
   // express-session secret
   'sessionSecret': 'mySecret',

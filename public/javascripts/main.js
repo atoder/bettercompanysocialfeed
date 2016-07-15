@@ -15,7 +15,12 @@ $(document).ready(function(){
   $('#submit-post').click(function(){
     var msgTxt = $('#message-text').val()
     $('#composeModal').modal('hide');
-    socket.emit('send message', msgTxt);
+    
+    // Timestamp
+    var momentTimestamp = moment.utc(moment().valueOf());
+    var localTimestamp = momentTimestamp.local().format('MMMM Do YYYY h:mm a');
+     
+    socket.emit('send message', {msg: msgTxt, localTimestamp: localTimestamp});
     console.log('sending message');
     $('#message-text').val('');
   });
@@ -35,7 +40,6 @@ $(document).ready(function(){
   });
 
   function displayMessages(data) {
-    console.log(data);
     // we are appending because the query got the results in descending order
     chatWindow.prepend('<div class="user-msg"><div class="row">' +
                           // determine if we have an avatar, if not request blank one

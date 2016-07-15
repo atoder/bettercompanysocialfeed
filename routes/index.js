@@ -104,7 +104,7 @@ router.post('/register', function(req, res, next){
 					// ContentType == MimeType of file ie. image/jpeg.
 					var params = {
 						Bucket: s3bucket,
-						Key: 'bettercompany/' + profilePictureFile.filename,
+						Key: 'images/' + profilePictureFile.filename,
 						Body: buff,
 						ACL: 'public-read',
 						ContentType: profilePictureFile.mimetype
@@ -203,10 +203,10 @@ router.get('/profile/images', function(req, res, next) {
 			// for the image to download to browser right away use attachment instead of inline
 			//res.setHeader("content-disposition", "attachment; filename=" + req.query.profile);
 			res.setHeader("content-disposition", "inline; filename=" + req.query.profile);
-			request('https://s3.amazonaws.com/aflexpin/bettercompany/' + req.query.profile).pipe(res);
+			request('https://s3.amazonaws.com/' + s3bucket + '/images/' + req.query.profile).pipe(res);
 		}
 	} else {
-		// Development
+		// Local folder
 		if (req.query.profile) {
 			profilePicture = './uploads/' + req.query.profile; 
 		} 

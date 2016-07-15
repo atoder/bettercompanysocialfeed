@@ -30,7 +30,7 @@ module.exports = {
   'dbUrl': process.env.MONGODB_URI,
 
   // express-session secret
-  'sessionSecret': process.env.AWS_SECRET_KEY,
+  'sessionSecret': process.env.SESSION_SECRET,
 
   // S3 information
   'accessKeyId': process.env.AWS_ACCESS_KEY,

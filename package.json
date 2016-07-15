@@ -18,7 +18,6 @@
     "express-messages": "~0.0.2",
     "express-session": "~1.13.0",
     "express-validator": "~2.20.5",
-    "moment": "^2.14.1",
     "mongoose": "~4.4.20",
     "morgan": "~1.6.1",
     "multer": "~1.1.0",

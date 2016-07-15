@@ -52,7 +52,7 @@ body {
 .img-responsive.img-compose {
 	display: block;
 	margin: 0 auto;
-	z-index: 2;
+	z-index: 1;
 	width: 60px;
 }
 

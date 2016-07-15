@@ -36,6 +36,10 @@ If no Amazon S3 keys are present, the app will resize and upload the profile pic
 
 The app will upload images to Amazon S3 as long as accesKeyID, secretAccesKey and bucket information is set up (also will use get /profile/images route to display images)
 
+(./uploads will still be used by 'sharp' npm to resize the image and then upload it to S3)
+
+Make sure your bucket name has a folder called /images
+
 **config/setup.js**
 
 ```javascript

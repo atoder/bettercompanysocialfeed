@@ -1,5 +1,6 @@
 # A Social Feed - Chat Room implemented with Node.js, Socket.IO, MongoDB
-URL to working sample: https://bettercompanysocial.herokuapp.com/
+
+URL to working sample: ```https://bettercompanysocial.herokuapp.com/```
 
 ## Description/Features
 A mobile friendly chat room/social feed with user registration/validation, a custom profile picture and a saved chat history.

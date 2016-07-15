@@ -27,11 +27,10 @@
 
 module.exports = {
   // mongodb url
-  //'dbUrl': process.env.MONGODB_URI,
-  'dbUrl': 'mongodb://localhost/socialfeed',
+  'dbUrl': process.env.MONGODB_URI,
 
   // express-session secret
-  'sessionSecret': 'mySecret',
+  'sessionSecret': process.env.AWS_SECRET_KEY,
 
   // S3 information
   'accessKeyId': process.env.AWS_ACCESS_KEY,

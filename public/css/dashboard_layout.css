@@ -33,7 +33,7 @@ body {
   list-style-type: none;
   color: #FFFFFF;
   background-color: #E57873;
-  border-color: #ebccd1;
+  border-color: #EBCCD1;
   padding: 15px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
@@ -86,9 +86,9 @@ body {
   width: 100%;
   margin-top: 10px;
   background-size: 100% 100%;
-  background-color: #a18dff;
+  background-color: #A18DFF;
   border: none;
-  border-color: #a18dff;
+  border-color: #A18DFF;
   margin-bottom: 6px;
   outline: 0;
   font-size: 12px;
@@ -154,13 +154,25 @@ body {
   margin-left: 3px;
 }
 
-.user-email {
-  color: #000000;
-  margin-top: 22px;
-  text-align: center;
+.additional-info {
   border-top-style: groove;
   border-width: 1px;
+  margin-top: 22px;
+}
+
+.user-email, .user-timestamp {
+  color: #000000;
   padding-top: 12px;
+  color: #A18DFF;
+}
+
+.user-email {
+  text-align: left;
+}
+
+.user-timestamp {
+  font-size: 0.9em;
+  text-align: right;
 }
 
 .description-text {

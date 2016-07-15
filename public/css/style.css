@@ -90,6 +90,7 @@ input[type=text].short-description {
 
 .login-create-account a {
   color: #FFFFFF;
+  text-decoration: none;
 }
 
 .btn-sign-in, .btn-sign-in:hover, .btn-sign-in:focus, .btn-sign-in:active, .btn-sign-in:visited, .btn-sign-in:active:focus {

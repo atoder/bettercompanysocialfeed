@@ -8,6 +8,9 @@ var bodyParser = require('body-parser');
 // For sanitizing user input
 var sanitizer = require('sanitizer');
 
+// Moment js for date formatting
+var moment = require('moment');
+
 var expressValidator = require('express-validator');
 //flash message middleware for Connect.
 var flash = require('connect-flash');
@@ -151,17 +154,23 @@ app.io.sockets.on('connection', function(socket){
 	// created is asc
 	query.sort('created').limit(numberOfMessagesToShow).exec(function(err, data) {
 		if (err) throw err;
+    //console.log(data);
 		socket.emit('load old messages', data);
 	});
 
 	socket.on('send message', function(data){
     console.log('sending message');
-    // sanitize user data
+    // Sanitize user data
     data = sanitizer.sanitize(data);
-		var newMessage = new Chat({email: userEmail, avatar: userAvatar, msg: data});
+    
+    // Timestamp
+    var momentTimestamp = moment.utc(moment().valueOf());
+    var localTimestamp = momentTimestamp.local().format('MMMM Do YYYY h:mm a');
+    
+		var newMessage = new Chat({email: userEmail, avatar: userAvatar, msg: data, localTimestamp: localTimestamp});
 		newMessage.save(function(err) {
 			if (err) throw err;
-      socket.emit('show message', {email: userEmail, avatar: userAvatar, msg: data});
+      socket.emit('show message', {email: userEmail, avatar: userAvatar, msg: data, localTimestamp: localTimestamp});
 		});
 	});
 

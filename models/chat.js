@@ -5,6 +5,7 @@ var chatSchema = mongoose.Schema({
   email: String,
   msg: String,
   avatar: String,
+  localTimestamp: String,
   created: {type: Date, default: Date.now}
 });
 

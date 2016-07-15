@@ -9,6 +9,10 @@ Latest messages will be on the top of the social feed
 
 Profile images are resized 88 by 88.
 
+Datestamp of chats is local to the user of the message using Moment.js
+
+User input is sanitized 
+
 ##Technology Stack Used:
 Node.js
 
@@ -70,3 +74,11 @@ module.exports = {
   'bucket': ''
 }
 ```
+
+
+# Bonus/Future To do
+- Let user change profile picture in profile dashboard
+- Let users access each other’s profiles
+- Let user request username and password
+- User's own chat can have different styling vs all other chats
+- Unit tets

@@ -47,12 +47,12 @@ body {
 	/* Center the element using margin-left = 1/2 of width: 75%  = 75/2 = 37.5 */
 	margin-left: -37.5%;
 	bottom: 56px;
+	z-index: 1;
 }
 
 .img-responsive.img-compose {
 	display: block;
 	margin: 0 auto;
-	z-index: 1;
 	width: 60px;
 }
 

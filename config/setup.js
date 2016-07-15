@@ -27,8 +27,7 @@
 
 module.exports = {
   // mongodb url
-  //'dbUrl': process.env.MONGODB_URI,
-  'dbUrl': 'mongodb://localhost/bettercompanyabc',
+  'dbUrl': process.env.MONGODB_URI,
 
   // express-session secret
   'sessionSecret': process.env.SESSION_SECRET,

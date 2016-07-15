@@ -1,5 +1,4 @@
 # A Social Feed - Chat Room implemented with Node.js, Socket.IO, MongoDB
-
 URL to working sample: ```https://bettercompanysocial.herokuapp.com/```
 
 ## Description/Features

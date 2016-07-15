@@ -82,8 +82,10 @@ module.exports = {
 
 
 # Bonus/Future To do
+- Use http://timeago.yarp.com/ for timestamp 
 - Let user change profile picture in profile dashboard
 - Let users access each other’s profiles
 - Let user request username and password
 - User's own chat can have different styling vs all other chats
-- Unit tets
+- Unit tests
+- React.js for front end?

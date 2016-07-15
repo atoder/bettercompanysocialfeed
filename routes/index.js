@@ -204,7 +204,9 @@ router.get('/profile/images', function(req, res, next) {
 			//res.setHeader("content-disposition", "attachment; filename=" + req.query.profile);
 			res.setHeader("content-disposition", "inline; filename=" + req.query.profile);
 			request('https://s3.amazonaws.com/' + s3bucket + '/images/' + req.query.profile).pipe(res);
-		}
+		} else {
+      res.sendFile(path.resolve(profilePicture));
+    }
 	} else {
 		// Local folder
 		if (req.query.profile) {

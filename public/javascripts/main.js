@@ -40,6 +40,7 @@ $(document).ready(function(){
   });
 
   function displayMessages(data) {
+    console.log(data.avatar);
     // we are appending because the query got the results in descending order
     chatWindow.prepend('<div class="user-msg"><div class="row">' +
                           // determine if we have an avatar, if not request blank one

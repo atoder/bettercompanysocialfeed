@@ -139,22 +139,22 @@ app.io.use(function(socket, next){
 });
 
 app.io.sockets.on('connection', function(socket){
-	console.log('a user connected');
-	// req.session - Session object in a normal request as in routes. Example: app.get('/', function(req,res) { ....
-	// socket.request.session - Now it's available from Socket.IO sockets too!
-	var userEmail = socket.request.session.passport.user;
+  console.log('a user connected');
+  // req.session - Session object in a normal request as in routes. Example: app.get('/', function(req,res) { ....
+  // socket.request.session - Now it's available from Socket.IO sockets too!
+  var userEmail = socket.request.session.passport.user;
   var userAvatar = socket.request.session.avatar;
 
-	// Look up all the message in the database
-	var query = Chat.find({});
-	// -created is desc
-	// created is asc
-	query.sort('created').limit(numberOfMessagesToShow).exec(function(err, data) {
-		if (err) throw err;
-		socket.emit('load old messages', data);
-	});
+  // Look up all the message in the database
+  var query = Chat.find({});
+  // -created is desc
+  // created is asc
+  query.sort('created').limit(numberOfMessagesToShow).exec(function(err, data) {
+    if (err) throw err;
+    socket.emit('load old messages', data);
+  });
 
-	socket.on('send message', function(data){
+  socket.on('send message', function(data){
     // data.localTimestamp will contain the timestamp
     // data.msg will container the user message
 
@@ -164,14 +164,14 @@ app.io.sockets.on('connection', function(socket){
     // Sanitize user data
     var msg = sanitizer.sanitize(data.msg);
    
-		var newMessage = new Chat({email: userEmail, avatar: userAvatar, msg: msg, localTimestamp: localTimestamp});
-		newMessage.save(function(err) {
-			if (err) throw err;
+    var newMessage = new Chat({email: userEmail, avatar: userAvatar, msg: msg, localTimestamp: localTimestamp});
+    newMessage.save(function(err) {
+    if (err) throw err;
       socket.emit('show message', {email: userEmail, avatar: userAvatar, msg: msg, localTimestamp: localTimestamp});
-		});
-	});
+    });
+  });
 
-	socket.on('disconnect', function(){
+  socket.on('disconnect', function(){
     console.log('user disconnected');
   });
 });

@@ -3,7 +3,7 @@ body {
   background-image: url('../images/img_background@2x.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: center bottom;
+  background-position: center center;
   -webkit-background-size: auto 100%;
   -moz-background-size: auto 100%;
   -ms-background-size: auto 100%;

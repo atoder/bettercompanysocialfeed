@@ -50,7 +50,7 @@ router.get('/register', function(req, res, next) {
 // POST registration of the account
 router.post('/register', function(req, res, next){
 
-	var password = req.body.password;
+  var password = req.body.password;
   var password2 = req.body.password2;
   var profilePictureFile = req.file;
 

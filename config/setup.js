@@ -5,7 +5,7 @@
  * PRODUCTION/HEROKU
  *
  SET UP THESE CONFIG VARIABLES ON HEROKU
- 'dbUrl': process.env.PROD_MONGODB,
+ 'dbUrl': process.env.MONGODB_URI,
  'sessionSecret': process.env.SESSION_SECRET,
 // S3 information
 'accessKeyId': process.env.AWS_ACCESS_KEY,
@@ -29,7 +29,7 @@
 
 module.exports = {
   // mongodb url
-  'dbUrl': process.env.PROD_MONGODB,
+  'dbUrl': process.env.MONGODB_URI,
 
   // express-session secret
   'sessionSecret': process.env.SESSION_SECRET,

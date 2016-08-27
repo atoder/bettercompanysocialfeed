@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-	// var socket = io.connect('http://localhost:3000');
+  // var socket = io.connect('http://localhost:3000');
   // We don't want to hardcode the host and port so we can deploy to any host/port
   // If you don't specify any port or host as,  it defaults to the host and port of the current page.
   var socket = io.connect();

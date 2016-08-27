@@ -1,4 +1,6 @@
-body {
+html {
+	height: 100%;
+  width: 100%;
   background-image: url('../images/img_background@2x.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -8,9 +10,14 @@ body {
   -ms-background-size: auto 100%;
   -o-background-size: auto 100%;
   background-size: auto 100%;
+}
+ 
+body {
+	height: 100%;
   font-family: QuickSand;
-  color: white;
+  color: #FFFFFF;
   margin: 0 auto;
+  background-color:transparent;
 }
 
 .container {
@@ -21,11 +28,34 @@ body {
   font-family: QuickSand;
   src: url('../fonts/quicksand/Quicksand-Regular.otf');
 }
+
 .navbar-brand {
 	font-size: 1.2em;
 }
 
+.glyphicon-arrow-left {
+	color: #9D9D9D;
+}
+
+.jumbotron {
+	text-align: center;
+	color: #9D9D9D;
+	background-color: #FFF;
+  margin: 0 auto;
+	margin-top: 10%;
+	width: 60%;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
+/* for bigger screens, make the profile jumbotron smaller */
+@media (min-width: 768px) {
+  .jumbotron {
+    width: 40%;
+  }
+}
+
 /* Warning messages related to dashboard sign in*/
+/*
 .msg-alert ul {
   display: block;
   margin: 0 auto;
@@ -40,6 +70,7 @@ body {
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px;
 }
+*/
 
 #fixed-wrapper {
 	width: 75%;
@@ -81,6 +112,7 @@ body {
   margin: 0 auto;
   position: relative; 
 }
+
 /* Using just background color instead of a custom button background */
 .post-button, .post-button:hover, .post-button:focus, .post-button:active, .post-button:visited, .post-button:active:focus {
   width: 100%;
@@ -111,17 +143,17 @@ body {
 
 .user-msg {
   background-color: #FFFFFF;
-  width: 50%;
+  width: 80%;
   max-width: 480px;
   padding: 12px;
   margin: 0 auto;
+  margin-bottom: 22px;
   text-align: left;
-  margin-bottom: 8px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px;
-  overflow: overlay;
+  overflow: hidden;
 }
 
 .header-msg {
@@ -177,8 +209,4 @@ body {
 
 .description-text {
   font-size: 0.9em;
-}
-
-.glyphicon-arrow-left {
-  color: white;
 }

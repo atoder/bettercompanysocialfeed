@@ -1,5 +1,6 @@
-body {
-  padding-top: 100px;
+html {
+	height: 100%;
+  width: 100%;
   background-image: url('../images/img_background@2x.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -10,6 +11,11 @@ body {
   -o-background-size: auto 100%;
   background-size: auto 100%;
   font-family: QuickSand;
+}
+
+body {
+  padding-top: 8%;
+  background-color:transparent;
 }
 
 @font-face {
@@ -113,7 +119,7 @@ input[type=text].short-description {
 
 /* Warning messages related to login page */
 .msg-alert {
-  margin-top: -78px;
+  margin-top: 12px;
 }
 
 .msg-alert ul {
@@ -151,8 +157,8 @@ input[type=text].short-description {
 }
 
 #register-profile-image {
-  margin-bottom: -24px;
-  margin-top: -10px;
+  margin-bottom: 24px;
+  margin-top: 10px;
 }
 
 #register-profile-image img {

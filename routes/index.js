@@ -32,31 +32,19 @@ var configFile = require(configFilePath);
 var accessKeyId;
 var secretAccessKey;
 var s3bucket;
-accessKeyId =  configFile.accessKeyId;
+accessKeyId = configFile.accessKeyId;
 secretAccessKey = configFile.secretAccessKey;
 s3bucket = configFile.bucket;
 
-// pull out access keys from environment or our config file (heroku vs local)
-var aws = require('aws-sdk');
-
-var configFilePath = '../config/setup.js';
-var configFile = require(configFilePath);
-
-var accessKeyId;
-var secretAccessKey;
-var s3bucket;
-accessKeyId =  configFile.accessKeyId;
-secretAccessKey = configFile.secretAccessKey;
-s3bucket = configFile.bucket;
 
 // GET login page.
 router.get('/', function(req, res, next) {
-  res.render('login', { title: 'Triangle', subtitle: 'Chat with interesting people in your city.' });
+  res.render('login', { title: 'Better Company', subtitle: 'Chat with interesting people in your city.' });
 });
 
 // GET registration page.
 router.get('/register', function(req, res, next) {
-  res.render('register', { title: 'Triangle', subtitle: 'Create your account' });
+  res.render('register', { title: 'Better Company', subtitle: 'Create your account' });
 });
 
 // POST registration of the account
@@ -75,62 +63,62 @@ router.post('/register', function(req, res, next){
 	var errors = req.validationErrors();
 
 	if (errors){
-		res.render('register',{
-      title: 'Triangle',
-      subtitle: 'Create your account',
+		res.render('register', {
+			title: 'Better Company',
+			subtitle: 'Create your account',
 			errors: errors
 		});
 	} else {
-    // If profie picture file exists, resize and write to upload directory locally
-    if (profilePictureFile) {
-      sharp(profilePictureFile.path).resize(88, 88).toBuffer(function (err, buff) {
-        if (err) return next(err)
+    	// If profie picture file exists, resize and write to upload directory locally
+    	if (profilePictureFile) {
+      		sharp(profilePictureFile.path).resize(88, 88).toBuffer(function (err, buff) {
+            if (err) return next(err);
 
-        // Write the resized buffer to file 
-				// Upload to S3 if we have accesskeyid, secretaccesskey, and s3bucket setup 
-				if (accessKeyId && secretAccessKey && s3bucket) {
+            // Write the resized buffer to file 
+            // Upload to S3 if we have accesskeyid, secretaccesskey, and s3bucket setup 
+            if (accessKeyId && secretAccessKey && s3bucket) {
 
-					aws.config.update({
-									accessKeyId: accessKeyId,
-									secretAccessKey: secretAccessKey,
-					});
+              aws.config.update({
+                accessKeyId: accessKeyId,
+                secretAccessKey: secretAccessKey,
+              });
 
-					var s3 = new aws.S3();
-					
-					// Set the bucket object properties
-					// Key == filename
-					// Body == contents of file
-					// ACL == Should it be public? Private?
-					// ContentType == MimeType of file ie. image/jpeg.
-					var params = {
-						Bucket: s3bucket,
-						Key: 'images/' + profilePictureFile.filename,
-						Body: buff,
-						ACL: 'public-read',
-						ContentType: profilePictureFile.mimetype
-					};
-					
-					// Put the Object in the Bucket
-					s3.putObject(params, function(err, data) {
-						if (err) {
-							console.log(err)
-						} else {
-							console.log("Successfully uploaded data to s3 bucket");
-						}
-					});
-				} else {
-					fs.writeFile(profilePictureFile.path, buff, function (err) {
-						if (err) return console.log(err);
-						console.log('Finished resizing the profile picture file');
-					});
-				}
-      })
-    }
-		passport.authenticate('local-register',{
-			successRedirect: '/dashboard',
-			failureRedirect: '/register',
-			failureFlash: true
-		})(req, res, next)
+              var s3 = new aws.S3();
+              
+              // Set the bucket object properties
+              // Key == filename
+              // Body == contents of file
+              // ACL == Should it be public? Private?
+              // ContentType == MimeType of file ie. image/jpeg.
+              var params = {
+                Bucket: s3bucket,
+                Key: 'images/' + profilePictureFile.filename,
+                Body: buff,
+                ACL: 'public-read',
+                ContentType: profilePictureFile.mimetype
+              };
+              
+              // Put the Object in the Bucket
+              s3.putObject(params, function(err, data) {
+                if (err) {
+                  console.log(err)
+                } else {
+                  console.log("Successfully uploaded data to s3 bucket");
+                }
+              });
+            } else {
+              fs.writeFile(profilePictureFile.path, buff, function (err) { if (err) return console.log(err);
+                console.log('Finished resizing the profile picture file');
+              });
+            }
+          })
+    	}
+    	
+	    passport.authenticate('local-register',{
+	      successRedirect: '/dashboard',
+	      failureRedirect: '/register',
+	      failureFlash: true
+	    })(req, res, next)
 	}
 });
 
@@ -164,7 +152,7 @@ router.get('/dashboard', function(req, res, next) {
       layout: 'dashboard_layout', 
       email: req.user.email,
       avatar: req.user.avatar
-   });
+    });
 	}
 })
 
@@ -198,15 +186,15 @@ router.get('/profile/images', function(req, res, next) {
 	
   if (accessKeyId && secretAccessKey && s3bucket) {
 		if (req.query.profile) {
-		  // Sending a file from remote S3 URL and pipe it back to res
+			// Sending a file from remote S3 URL and pipe it back to res
 			// http://stackoverflow.com/questions/26288055/how-to-send-a-file-from-remote-url-as-a-get-response-in-node-js-express-app
 			// for the image to download to browser right away use attachment instead of inline
 			//res.setHeader("content-disposition", "attachment; filename=" + req.query.profile);
 			res.setHeader("content-disposition", "inline; filename=" + req.query.profile);
 			request('https://s3.amazonaws.com/' + s3bucket + '/images/' + req.query.profile).pipe(res);
 		} else {
-      res.sendFile(path.resolve(profilePicture));
-    }
+      		res.sendFile(path.resolve(profilePicture));
+  }
 	} else {
 		// Local folder
 		if (req.query.profile) {

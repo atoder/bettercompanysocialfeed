@@ -20,6 +20,8 @@
  Change dbUrl to your local mongo url and sessionSecret to whatever you want
  If you want to use S3 for image upload, put in proper keys
  If you want to upload images locally, remove S3 info or leave it as blank. For example:
+ 'dbUrl': 'mongodb://localhost/bettercompany',
+ 'sessionSecret': 'whateverSecret',
  'accessKeyId': '',
  'secretAccessKey': '',
  'bucket': '',
@@ -27,7 +29,7 @@
 
 module.exports = {
   // mongodb url
-  'dbUrl': process.env.MONGODB_URI,
+  'dbUrl': process.env.PROD_MONGODB,
 
   // express-session secret
   'sessionSecret': process.env.SESSION_SECRET,

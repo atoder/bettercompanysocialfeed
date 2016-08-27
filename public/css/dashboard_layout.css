@@ -47,7 +47,7 @@ body {
 	box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
 
-/* for bigger screens, make the profile space of the jumbotron smaller */
+/* for bigger screens, make the profile look smaller */
 @media (min-width: 768px) {
   .jumbotron {
     width: 40%;

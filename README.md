@@ -51,14 +51,14 @@ Make sure your bucket name has a folder called /images
 // PRODUCTION - HEROKU SETUP
 /*
   Heroku will need these 5 variables to be set
-  PROD_MONGODB - which will include the user/pass and mLab MongoDB URL
+  MONGODB_URI - which will include the user/pass and mLab MongoDB URL
   SESSION_SECRET - express-session secret variable
   AWS_ACCESS_KEY - S3 Key
   AWS_SECRET_KEY - S3 Secret Key
   AWS_BUCKET - S3 Bucket
 */
 module.exports = {
-    'dbUrl': process.env.PROD_MONGODB,
+    'dbUrl': process.env.MONGODB_URI,
     'sessionSecret': process.env.SESSION_SECRET,
     // S3 information
     'accessKeyId': process.env.AWS_ACCESS_KEY,

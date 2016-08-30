@@ -56,4 +56,8 @@ $(document).ready(function(){
                        '</div>');
 
   }
+  // Hides the logged in message notifaction on the dashboard page after the user logs in
+  setTimeout(function() {
+    $('.msg-alert').fadeOut(1600, 'linear');
+  }, 3000);
 });

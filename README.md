@@ -14,7 +14,7 @@ Datestamp of chats is local to the user of the message using Moment.js
 
 User input is sanitized 
 
-##Technology Stack Used:
+## Technology Stack Used:
 Node.js
 
 Express.js
